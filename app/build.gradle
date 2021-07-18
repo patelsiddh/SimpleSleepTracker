@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'androidx.navigation.safeargs'
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
 
 android {
     compileSdkVersion 30
@@ -40,7 +42,8 @@ android {
 
     // Enables data binding.
     buildFeatures {
-        dataBinding true
+        dataBinding = true
+        viewBinding = true
     }
 
 }
