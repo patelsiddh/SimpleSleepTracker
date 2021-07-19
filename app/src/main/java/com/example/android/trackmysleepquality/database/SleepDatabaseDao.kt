@@ -17,11 +17,10 @@
 package com.example.android.trackmysleepquality.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import com.example.android.trackmysleepquality.sleepquality.Converters
 
+@TypeConverters(Converters::class)
 @Dao
 interface SleepDatabaseDao{
 
