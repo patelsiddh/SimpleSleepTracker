@@ -18,9 +18,7 @@ package com.example.android.trackmysleepquality.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.android.trackmysleepquality.sleepquality.Converters
 
-@TypeConverters(Converters::class)
 @Dao
 interface SleepDatabaseDao{
 
@@ -37,7 +35,7 @@ interface SleepDatabaseDao{
     suspend fun clear()
 
     @Query("SELECT * from daily_sleep_quality_table ORDER BY nightId DESC")
-    suspend fun getAllNights(): LiveData<List<SleepNight>>
+    fun getAllNights(): LiveData<List<SleepNight>>
 
     @Query("SELECT * from daily_sleep_quality_table ORDER BY nightId DESC LIMIT 1")
     suspend fun getTonight() : SleepNight?
